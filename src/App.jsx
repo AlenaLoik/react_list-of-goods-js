@@ -44,12 +44,12 @@ function getGoodsView(sortField, reverse) {
 
 export const App = () => {
   const [sortField, setSortField] = useState('');
-  const [reverse, setReverce] = useState(false);
+  const [reverse, setReverse] = useState(false);
 
   const visibleGoods = getGoodsView(sortField, reverse);
 
   const sortGoods = (sorting, reversing = false) => {
-    setReverce(reversing);
+    setReverse(reversing);
     setSortField(sorting);
   };
 
@@ -90,7 +90,7 @@ export const App = () => {
           <button
             type="button"
             className={cn('button', 'is-danger', 'is-light')}
-            onClick={() => sortGoods('')}
+            onClick={() => sortGoods('', false)}
           >
             Reset
           </button>
